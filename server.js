@@ -10,10 +10,11 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "http://localhost:3001",  // Make sure to allow the correct frontend URL
+  origin: "https://frontendfor3w.onrender.com",  // Allow the deployed frontend URL
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true, // Include credentials (cookies) if necessary
 }));
+
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 const authRoutes = require("./routes/authRoutes");
