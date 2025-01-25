@@ -13,8 +13,7 @@ app.use(cors({
   credentials: true, // Include credentials (cookies) if necessary
 }));
 app.use(express.json());
-app.use("/uploads", express.static("uploads"));
-
+app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 
