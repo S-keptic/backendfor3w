@@ -10,9 +10,9 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: "https://frontendfor3w.onrender.com",  // Allow the deployed frontend URL
+  origin: "https://frontendfor3w.onrender.com", 
   methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true, // Include credentials (cookies) if necessary
+  credentials: true,
 }));
 
 app.use(express.json());
