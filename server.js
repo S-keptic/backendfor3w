@@ -7,7 +7,11 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3001",  // Make sure to allow the correct frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true, // Include credentials (cookies) if necessary
+}));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
